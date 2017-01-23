@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="FormsSample.Pages.AlunosPage"
+		Title="Alunos">
+	<ListView 
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand"
+			ItemsSource="{Binding Alunos}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<Grid>
+						<Label Grid.ColumnSpan="2"
+							Text="{Binding Nome}"/>
+						<Label Grid.Row="1" 
+							Text="{Binding Curso}"/>
+						<Label Grid.Row="1" Grid.Column="1" 
+							HorizontalOptions="End"
+							Text="{Binding Matricula}"/>
+					</Grid>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>
