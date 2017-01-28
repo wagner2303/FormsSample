@@ -7,19 +7,35 @@
 	<ListView 
 			HorizontalOptions="FillAndExpand"
 			VerticalOptions="FillAndExpand"
-			ItemsSource="{Binding Alunos}">
+			HasUnevenRows="true"
+			SeparatorVisibility="None"
+			BackgroundColor="#FAFAFA"
+			ItemsSource="{Binding Alunos}"
+			ItemTapped="Handle_ItemTapped">
+
+		<x:Arguments>
+			<ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+		</x:Arguments>
+		
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>
-					<Grid>
-						<Label Grid.ColumnSpan="2"
-							Text="{Binding Nome}"/>
-						<Label Grid.Row="1" 
-							Text="{Binding Curso}"/>
-						<Label Grid.Row="1" Grid.Column="1" 
-							HorizontalOptions="End"
-							Text="{Binding Matricula}"/>
-					</Grid>
+					<Frame 
+							Margin="8,4" Padding="4" 
+							HasShadow="true"
+							BackgroundColor="White">
+						<Grid>
+							<Label Grid.ColumnSpan="2"
+								FontAttributes="Bold"
+								FontSize="Large"
+								Text="{Binding Nome}"/>
+							<Label Grid.Row="1" 
+								Text="{Binding Curso}"/>
+							<Label Grid.Row="1" Grid.Column="1" 
+								HorizontalOptions="End"
+								Text="{Binding Matricula}"/>
+						</Grid>
+					</Frame>
 				</ViewCell>
 			</DataTemplate>
 		</ListView.ItemTemplate>

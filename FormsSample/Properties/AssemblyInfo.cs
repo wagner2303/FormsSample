@@ -2,7 +2,7 @@
 //  AssemblyInfo.cs
 //
 //  Author:
-//       Wagner Teixeira <wagner@sydy.com.br>
+//       Wagner Teixeira <wagner2303@gmail.com>
 //
 //  Copyright (c) 2017 
 //
@@ -15,7 +15,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("FormsSample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sydy Tecnologia Ltda.")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]

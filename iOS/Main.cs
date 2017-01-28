@@ -2,7 +2,7 @@
 //  Main.cs
 //
 //  Author:
-//       Wagner Teixeira <wagner@sydy.com.br>
+//       Wagner Teixeira <wagner2303@gmail.com>
 //
 //  Copyright (c) 2017 
 //
