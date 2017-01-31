@@ -11,8 +11,8 @@ using SQLite.Net.Attributes;
 
 namespace FormsSample.Models {
 	public class Aluno {
-		[PrimaryKey]
-		public long Id { get; set; }
+		[PrimaryKey, AutoIncrement]
+		public long? Id { get; set; }
 		public string Nome { get; set;}
 		public string Curso { get; set; }
 		public string Matricula { get; set; }
