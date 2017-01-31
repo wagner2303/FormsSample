@@ -2,20 +2,37 @@
 <ContentPage 
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:resources="clr-namespace:FormsSample.Resources;assembly=FormsSample"
 		x:Class="FormsSample.Pages.AlunosPage"
 		Title="Alunos">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Icon="{x:Static resources:Images.IconeAdicionar}" 
+			Command="{Binding AddAlunoCommand}"/>
+	</ContentPage.ToolbarItems>
 	<ListView 
 			HorizontalOptions="FillAndExpand"
 			VerticalOptions="FillAndExpand"
 			HasUnevenRows="true"
 			SeparatorVisibility="None"
 			BackgroundColor="#FAFAFA"
+			Header="{Binding .}"
 			ItemsSource="{Binding Alunos}"
 			ItemTapped="Handle_ItemTapped">
 
 		<x:Arguments>
 			<ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
 		</x:Arguments>
+
+		<ListView.HeaderTemplate>
+			<DataTemplate>
+				<SearchBar 
+					HeightRequest="45"
+					Placeholder="Buscar"
+					BackgroundColor="White"
+					Text="{Binding Search}">
+			</SearchBar>
+			</DataTemplate>
+		</ListView.HeaderTemplate>
 		
 		<ListView.ItemTemplate>
 			<DataTemplate>

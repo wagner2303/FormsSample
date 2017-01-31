@@ -13,6 +13,9 @@ using FormsSample.Models;
 using System.Collections.Generic;
 using FormsSample.Repositories;
 using FormsSample.Services;
+using System.Threading.Tasks;
+using FormsSample.Pages;
+
 namespace FormsSample.ViewModels {
 	public class AlunoViewModel : BaseViewModel {
 		
@@ -53,6 +56,29 @@ namespace FormsSample.ViewModels {
 			set {
 				_Alunos = value;
 				SetPropertyChanged(nameof(Alunos));
+			}
+		}
+
+		string _Search = string.Empty;
+		public string Search {
+			get { return _Search; }
+			set {
+				_Search = value;
+				var sqlite = DependencyService.Get<ISQLite>();
+				Alunos = new ObservableCollection<Aluno>(new DataService(sqlite).FindAlunoByNome(_Search));
+			}
+		}
+
+		Command _AddAlunoCommand;
+		public Command AddAlunoCommand {
+			get { return _AddAlunoCommand ?? (_AddAlunoCommand = new Command(async () => await ExecuteAddAlunoCommand())); }
+		}
+
+		async Task ExecuteAddAlunoCommand() {
+			if (!IsBusy) {
+				IsBusy = true;
+				await Navigation.PushAsync(new AddAlunoPage());
+				IsBusy = false;
 			}
 		}
 	}

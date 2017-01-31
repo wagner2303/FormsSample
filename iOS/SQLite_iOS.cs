@@ -10,7 +10,9 @@ using System;
 using System.IO;
 using SQLite.Net;
 using SQLite.Net.Platform.XamarinIOS;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(FormsSample.iOS.SQLite_iOS))]
 namespace FormsSample.iOS {
 	public class SQLite_iOS : ISQLite {
 		const string sqliteFilename = "dn_name.db";

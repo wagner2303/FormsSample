@@ -6,9 +6,11 @@
 //
 //  Copyright (c) 2017 
 //
-using Xamarin.Forms;
 using FormsSample.Pages;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace FormsSample {
 	public partial class App : Application {
 		public App() {
